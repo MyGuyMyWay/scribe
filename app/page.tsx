@@ -1,9 +1,18 @@
+'use client'
+import HomePage from "@/pages/HomePage";
+import Header from "@/pages/Header";
 import Image from "next/image";
+import { useState } from 'react';
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+
   return (
-    <div className={`m-6 font-lato`}>
-      <p>Whereas disregard and contempt for human rights have resulted</p>
+    <div className={'flex flex-col max-w-[1000px] mx-auto w-full'}>
+      <section className={'min-h-screen flex flex-col'}>
+        <Header />
+        <HomePage />
+      </section>
     </div>
   );
 }

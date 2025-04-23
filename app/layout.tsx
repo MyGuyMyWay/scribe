@@ -19,7 +19,7 @@ const latoFont = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Scribe",
+  title: "Scriber",
   description: "AI assisted transcriber",
 };
 
