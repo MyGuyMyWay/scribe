@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Lato } from "next/font/google";
+import { Geist, Geist_Mono, Lato, Poppins } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,6 +18,12 @@ const latoFont = Lato({
   variable: "--font-lato",
 });
 
+const poppsinsFont = Poppins({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-poppins",
+});
+
 export const metadata: Metadata = {
   title: "Scriber",
   description: "AI assisted transcriber",
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${latoFont.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${latoFont.variable} ${poppsinsFont.variable} antialiased`}
       >
         {children}
       </body>

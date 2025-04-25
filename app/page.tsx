@@ -5,7 +5,10 @@ import Image from "next/image";
 import { useState } from 'react';
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  const [file, setFile] = useState(null);
+  const [audioStream, setAudioStream] = useState(null);
+
+  const isAudioAvailable = file || audioStream;
 
   return (
     <div className={'flex flex-col max-w-[1000px] mx-auto w-full'}>
