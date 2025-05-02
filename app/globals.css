@@ -14,6 +14,18 @@
   --font-poppins: var(--font-poppins);
 }
 
+.specialButton {
+  background-color: #ffdf20;
+  color: black;
+  border-width: 2px;
+  border-color: #ffdf20;
+  @variant hover {
+    transition-duration: 300ms;
+    background-color: transparent ;
+    color: white;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

@@ -26,7 +26,7 @@ const poppsinsFont = Poppins({
 
 export const metadata: Metadata = {
   title: "Scriber",
-  description: "AI assisted transcriber",
+  description: "AI powered transcriber",
 };
 
 export default function RootLayout({
