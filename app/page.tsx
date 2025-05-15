@@ -3,11 +3,15 @@ import HomePage from "@/pages/HomePage";
 import Header from "@/pages/Header";
 import Image from "next/image";
 import FileDisplay from "@/pages/FileDisplay";
-import { useState } from 'react';
+import Information from "@/pages/Information";
+import { useState, useEffect } from 'react';
+import Transcribing from "@/pages/Transcribing";
 
 export default function Home() {
   const [file, setFile] = useState(null);
   const [audioStream, setAudioStream] = useState(null);
+  const [output, setOutput] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const isAudioAvailable = file || audioStream;
 
@@ -20,8 +24,15 @@ export default function Home() {
     <div className={'flex flex-col max-w-[1000px] mx-auto w-full'}>
       <section className={'min-h-screen flex flex-col'}>
         <Header />
-        {isAudioAvailable ? ( <FileDisplay file={file} audioStream={audioStream} handleAudioReset={handleAudioReset} />) : 
-        (<HomePage setFile={setFile} setAudioStream={setAudioStream} />)}
+        {output ? (
+          <Information />
+        ) : loading ? (
+          <Transcribing />
+        ) : isAudioAvailable ? ( 
+          <FileDisplay file={file} audioStream={audioStream} handleAudioReset={handleAudioReset} />
+        ) : (
+          <HomePage setFile={setFile} setAudioStream={setAudioStream} />
+        )}
       </section>
     </div>
   );
